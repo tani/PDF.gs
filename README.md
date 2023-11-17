@@ -22,6 +22,6 @@ async function myFunction() {
 
 ## License
 
-Apatch Software License
+See LICENSE.
 
 2023 (c) TANIGUCHI Masaya
