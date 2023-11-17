@@ -1,0 +1,27 @@
+--- node_modules/pdfjs-dist/build/pdf.js	2023-11-17 19:01:46.673437927 +0900
++++ ./pdf.js	2023-11-17 19:01:17.607606458 +0900
+@@ -65,7 +65,7 @@
+ exports.unreachable = unreachable;
+ exports.utf8StringToString = utf8StringToString;
+ exports.warn = warn;
+-const isNodeJS = typeof process === "object" && process + "" === "[object process]" && !process.versions.nw && !(process.versions.electron && process.type && process.type !== "browser");
++const isNodeJS = true || typeof process === "object" && process + "" === "[object process]" && !process.versions.nw && !(process.versions.electron && process.type && process.type !== "browser");
+ exports.isNodeJS = isNodeJS;
+ const IDENTITY_MATRIX = [1, 0, 0, 1, 0, 0];
+ exports.IDENTITY_MATRIX = IDENTITY_MATRIX;
+@@ -1979,7 +1979,7 @@
+         return mainWorkerMessageHandler;
+       }
+       if (_util.isNodeJS && typeof require === "function") {
+-        const worker = eval("require")(this.workerSrc);
++        const worker = require("./pdf.worker.js")
+         return worker.WorkerMessageHandler;
+       }
+       await (0, _display_utils.loadScript)(this.workerSrc);
+@@ -18143,4 +18144,4 @@
+ /******/ })()
+ ;
+ });
+-//# sourceMappingURL=pdf.js.map
+\ No newline at end of file
++//# sourceMappingURL=pdf.js.map
