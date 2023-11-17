@@ -10,7 +10,7 @@ async function extractText(pdf) {
     const page = await doc.getPage(i)
     const content = await page.getTextContent()
     const strings = content.items.map(_ => _.str)
-    text += strings.join(' ')
+    text += strings.join(' ') + ' '
   }
   return text
 }
