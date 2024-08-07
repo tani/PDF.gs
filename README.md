@@ -16,7 +16,7 @@
 async function myFunction() {
   const result = UrlFetchApp.fetch("https://arxiv.org/pdf/2207.02098.pdf")
   const binary = Uint8Array.from(result.getAs('application/pdf').getBytes())
-  console.log(await PdfApp.extractText(binary));
+  console.log(await PdfApp.extractText(binary)/*, startPage, endPage*/);
 }
 ```
 
